@@ -3,7 +3,13 @@ import { ApiError } from '../utils/apiError.js';
 import { User } from '../models/user.models.js';
 import { uploadOnCloudinary } from '../utils/cloudinary.js';
 import { ApiResponse } from '../utils/apiResponse.js';
-
+const generateAccessAndRefreshToken = async(UserId)=>{
+    try {
+        
+    } catch (error) {
+     throw new ApiError(500,"Something went wrong while generating refresh token")   
+    }
+}
 const registerUser = asyncHandler(async (req, res) => {
     // get user details from frontend 
     const { fullname, email, username, password } = req.body;
@@ -67,5 +73,28 @@ const registerUser = asyncHandler(async (req, res) => {
         new ApiResponse(200, createdUser, "User registered successfully")
     );
 });
+const loginUser = asyncHandler(async ( req , res) =>{
+    // take input from user
+    // email authentication ,means kis base par login krwana incase dono mai bhi krwa skty
+    // password
+    // refresh and access token 
+    // sending tokens through cookies
+    // send logined successfully message
+    const {email,username,password} = req.body
+    console.log(req.body)
+    if(!username || !email ){
+        throw new ApiError(400, "Email and username are required");
+    }
+    const user = await User.findOne({
+        $or:[{username},{email}]
+    })
+    if(!user){
+        throw new ApiError(400, "Invalid username or email, Not registered");
+    }
+    const isPasswordValid = await user.isPasswordCorrect(password)
+    if(!isPasswordValid){
+        throw new ApiError(400, "Invalid password");
+    }
 
-export { registerUser };
+})
+export { registerUser,loginUser };

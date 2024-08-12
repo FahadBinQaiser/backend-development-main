@@ -1,0 +1,9 @@
+PORT=8000
+MONGO_URL=mongodb+srv://fahadbinqaiser3:<your-password>@cluster0.7qsnunp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+ACCESS_TOKEN_SECRET=jfirbiijbfriufb4b48u84n5n5nu5nksuofhuffmfih0g9e4rjg7h49dnf74h8f0ng4u7fng4n0b4wjtn59wnOMNUE984hKInfriw*ifnur@$krj4i
+ACCESS_TOKEN_EXPIRY=1d
+REFRESH_TOKEN_SECRET=jebbifu4f839747IBYFI*4r97^&*berjrfbwiBYGFIeyruhyewgwifbeutfnf&^*93bhfeywf@$9sdhwbifbhisvYFRI$YIDbuf498
+REFRESH_TOKEN_EXPIRY=10d
+CLOUDINARY_CLOUD_NAME=dlkx4buls
+CLOUDINARY_API_KEY=488313172464231
+CLOUDINARY_API_SECRET=8RE_8kvZ2GTy_rrt596WQlr_UR0
